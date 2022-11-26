@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../vue.js"></script>
+    <title>Primeira aula Vue</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{mensagem}}</h1>
+      Valor total: {{valorTotal}}<br />
+      Logado: {{logado}}<br />
+      Hobbies: {{hobbies [3]}}<br />
+      Perfil: {{perfil.site}}, {{ perfil.cursos[0].nome }}
+    </div>
+    <script>
+      const vm = new Vue({
+        el: "#app", //# para ID | . para selecionar por class
+        data: {
+          //variaveis/atributos reativos
+          mensagem: "Primeiro Template controlado pelo Vue",
+          valorTotal: 150.47, // número
+          logado: false, //boleano
+          hobbies: [
+            "dormir",
+            "colecionar video games antigos",
+            "correr",
+            "trilhas",
+          ],
+          perfil: {
+            nome: "Danilo Alves",
+            site: "https://dap4ever.github.io/portifolio/",
+            idade: "34",
+            cursos: [
+              {
+                nome: "Laravel",
+                cargaHoraria: "50 horas",
+              },
+              {
+                nome: "Bancos de Dados Relacionais",
+                cargaHoraria: "40 horas",
+              },
+            ],
+          },
+        },
+      }); // vm = ViewModel
+    </script>
+  </body>
+</html>

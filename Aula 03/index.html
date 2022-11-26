@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../vue.js"></script>
+    <title>Terceira aula Vue</title>
+  </head>
+  <body>
+   
+    <div id="app">
+        <h1> {{titulo}} </h1>
+        {{ somar() }}
+    </div>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          titulo:
+            "Methods - Adicionando os nossos primeiros métodos a instância Vue",
+        },
+        methods: {
+          somar: function somar() {
+            //convencional
+            return 4 + 2;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
