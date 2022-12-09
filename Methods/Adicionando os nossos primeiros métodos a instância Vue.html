@@ -8,10 +8,13 @@
     <title>Terceira aula Vue</title>
   </head>
   <body>
-   
     <div id="app">
-        <h1> {{titulo}} </h1>
-        {{ somar() }}
+      <h1>{{titulo}}</h1>
+      {{ somar() }} <br />
+      {{subtrair()}} <br />
+      {{multiplicar()}} <br />
+      {{dividir()}} <br />
+      {{numeroAleatorio()}}
     </div>
     <script>
       const vm = new Vue({
@@ -24,6 +27,22 @@
           somar: function somar() {
             //convencional
             return 4 + 2;
+          },
+          subtrair: function () {
+            // modo anônimo
+            return 4 - 2;
+          },
+          multiplicar: () => {
+            // arrow function
+            return 4 * 2;
+          },
+          dividir() {
+            // forma rapida de difinir os pares de chaves/valor
+            return 4 / 2;
+          },
+          numeroAleatorio: function numeroAleatorio() {
+            // modo anônimo
+            return Math.random();
           },
         },
       });

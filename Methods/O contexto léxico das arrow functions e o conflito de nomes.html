@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../vue.js"></script>
+    <title>Terceira aula Vue</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{titulo}}</h1>
+      {{ somar() }} <br />
+      {{subtrair()}} <br />
+      {{multiplicar()}} <br />
+      {{dividir()}} <br />
+    </div>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          titulo:
+            "Methods - Adicionando os nossos primeiros métodos a instância Vue",
+          n1: 10,
+          n2: 5,
+        },
+
+        methods: {
+          somar: function somar() {
+            //convencional
+            return this.n1 + this.n2;
+          },
+          subtrair: function () {
+            // modo anônimo
+            return this.n1 - this.n2;
+          },
+          multiplicar: () => {
+            //  não funciona com arrow function
+            console.log(this)
+            return this.n1 * this.n2; // contexto léxico
+          },
+          dividir() {
+            // forma rapida de difinir os pares de chaves/valor
+            let f = () => {
+                console.log('**********', this) //teste para visualização no console
+                return 'teste';
+            }
+            return this.n1 / this.n2;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
